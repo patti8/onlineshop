@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col">
+    <div class="jumbotron">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col offset-md-5 ">
+      <img src="<%= image_path("icon/icons8-gift-500.png")%>" width="100px" alt=""><h3><b>Product :</b></h3>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <% @products.each do |s| %>
+    <div class="col col-md-4">
+      <br>
+      <br>
+        <div class="card">
+          <div class="card-header">
+
+          </div>
+          <div class="card-body">
+            <b>Product name:</b> <%= s.product_name%><br>
+            <b>Description:</b> <%= s.description%><br>
+            <b>Price:</b> <%= s.price%><br>
+            <%= link_to "Buy", user_new_order_path_url(s), class: "btn btn-primary btn-md"%>
+          </div>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<br>
+<br>

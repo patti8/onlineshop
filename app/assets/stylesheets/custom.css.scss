@@ -1,0 +1,44 @@
+@import "bootstrap";
+@import "//maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css";
+
+.sidebar {
+    background-color: #4CC0BF;
+    border: 9px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0px !important;
+    padding-top: 25px;
+    min-height: 550px;
+    a {
+      padding:  5px;
+      min-width: 15px;
+      border-radius: 10px;
+      color: white;
+    }
+    a:hover {
+      text-decoration: underline;
+      box-shadow: 1px 1px 5px 1px black;
+    }
+    li {
+      padding: 10px;
+    }
+    ul {
+      list-style: none;
+    }
+}
+
+.navbar {
+  background-color: #fff !important;
+  box-shadow: 1px 1px 5px 1px black;
+  margin-bottom: 10px;
+  .navbar-brand {
+    color: black;
+    left: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #4CC0BF !important;
+    }
+}

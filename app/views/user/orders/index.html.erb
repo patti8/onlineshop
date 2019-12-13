@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col col-md-3">
+    <%= render 'user/shared/sidebar'%>
+  </div>
+  <div class="col col-md-9">
+    <h1>Order User</h1>
+    <table class="table">
+      <thead>
+        <td scope="col">Product Name</td>
+        <td scope="col">Price</td>
+        <td scope="col">Shipping costs</td>
+        <td scope="col">Total Price</td>
+        <td scope="col">Status</td>
+      </thead>
+      <% @orders.each do |s|%>
+      <tbody>
+        <td><%= s.product_id %></td>
+        <td><%= s.shipping_costs %></td>
+        <td><%= s.total_price %></td>
+        <td><%= s.status%></td>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <td>Shipping Costs</td>
+    <td>Total Price</td>
+    <td>Created at</td>
+    <td>Updated at</td>
+    <td>User Id</td>
+    <td>Product ID</td>
+  </tr>
+  <% @orders.each do |s| %>
+  <tr>
+    <td><%= s.shipping_costs %></td>
+    <td><%= s.total_price %></td>
+    <td><%= s.created_at %></td>
+    <td><%= s.updated_at %></td>
+    <td><%= s.user.email %></td>
+    <td><%= s.product.id %></td>
+  </tr>
+  <% end %>
+</table>

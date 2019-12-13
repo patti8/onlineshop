@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <img src="<%= image_path("icon/icons8-shop-400.png")%>" width="50px" alt=""> <strong>Olshop VS</strong>
+  <% end %>
+
+  <% if user_signed_in? %>
+
+    <%= link_to user_orders_path(current_user) do %>
+      <img src="<%= image_path("icon/icons8-basket-400.png")%>" width="50px" alt=""> <strong>Basket</strong>
+    <% end %>
+
+    <%= link_to user_path(current_user) do %>
+      <img src="<%= image_path("icon/icons8-female-profile-480.png")%>" width="50px" alt=""> <strong>Profile</strong>
+    <% end %>
+
+    <%= link_to(destroy_user_session_path, method: :delete) do %>
+    <img src="<%= image_path("icon/icons8-logout-rounded-left-512.png")%>" width="50px" alt=""> <strong>Logout</strong>
+    <% end %>
+
+  <% else %>
+    <%= link_to(new_user_session_path) do %>
+      <img src="<%= image_path("icon/icons8-login-512")%>" width="50px" alt=""> <strong>Login</strong>
+    <% end %>
+  <% end %>
+</nav>

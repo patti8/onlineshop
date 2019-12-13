@@ -1,0 +1,7 @@
+<div class="sidebar">
+  <ul>
+    <li><%= link_to 'Dashboards', user_path(current_user)%></li>
+    <li><%= link_to 'Order', user_orders_path(current_user)%></li>
+    <li><%= link_to 'Edit Password',  edit_user_password_path(current_user)%></li>
+  </ul>
+</div>

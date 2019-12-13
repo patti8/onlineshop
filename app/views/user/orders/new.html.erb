@@ -1,0 +1,20 @@
+<h1>Order Products</h1>
+
+<%= form_for [:user, @order] do |f|%>
+  <%= f.hidden_field :user_id, value: current_user.id%>
+  <%# <%= f.hidden_field :product_id, value:  @product.id %> %>
+
+
+  <p>
+    <%= f.number_field :shipping_costs, placeholder: "shipping costs" %>
+  </p>
+
+  <p>
+    <%= f.number_field :total_price, placeholder: "total price" %>
+  </p>
+
+  <p>
+    <%= button_to 'Add to Cart', { controller: 'line_items', action: 'create', id: brick },  class: 'green radius nice button', method: :post, remote: true %>
+    <%= f.submit %>
+  </p>
+<% end %>

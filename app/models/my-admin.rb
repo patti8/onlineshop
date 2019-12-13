@@ -1,0 +1,3 @@
+class ApplicationAdminController < ApplicationRecord
+
+end 

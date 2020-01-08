@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationAdminController
 
   def index
+    @adm_products = Product.all
   end
 
   def new
@@ -11,7 +12,7 @@ class Admin::ProductsController < ApplicationAdminController
     @product = Product.new(product_params)
     @product.save!
     if @product.save
-      redirect_to @products
+      redirect_to admin_products_path
     else
       render 'new'
     end

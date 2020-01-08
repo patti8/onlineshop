@@ -1,39 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div class="col offset-md-4">
-      <div class="card">
-        <div class="card-header">
-          Login
-        </div>
-        <div class="card-body">
-          <h2>Log insdsdq</h2>
-
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            </div>
-
-            <div class="field">
-              <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "current-password" %>
-            </div>
-
-            <% if devise_mapping.rememberable? %>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-              </div>
-            <% end %>
-
-            <div class="actions">
-              <%= f.submit "Log in" %>
-            </div>
-          <% end %>
-
-          <%= render "users/shared/links" %>
-        </div>
-      </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+    <%= f.label :email, for: "inputEmail", class: "sr-only" %>
+    <%= f.text_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", required: "", autofocus: "" %>
+    
+    <%= f.label :password, for: "inputPassword", class: "sr-only" %>
+    <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password", required:"" %>
+    
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
     </div>
-  </div>
+    <%= f.submit "submit", class: "btn btn-lg btn-primary btn-block" %>
+  </form>
+  <% end %>
 </div>

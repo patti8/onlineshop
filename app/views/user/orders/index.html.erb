@@ -8,16 +8,17 @@
       <thead>
         <td scope="col">Product Name</td>
         <td scope="col">Price</td>
-        <td scope="col">Shipping costs</td>
         <td scope="col">Total Price</td>
         <td scope="col">Status</td>
+        <td scope="col">Payment</td>
       </thead>
       <% @orders.each do |s|%>
       <tbody>
-        <td><%= s.product_id %></td>
-        <td><%= s.shipping_costs %></td>
+        <td><%= s.product.product_name %></td>
+        <td><%= s.product.price %></td>
         <td><%= s.total_price %></td>
         <td><%= s.status%></td>
+        <td><%= button_to "pay now", checkout_create_path, params: {id: s.id}, remote: true %></td>
       </tbody>
       <% end %>
     </table>

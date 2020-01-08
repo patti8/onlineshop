@@ -24,7 +24,17 @@
             <b>Product name:</b> <%= s.product_name%><br>
             <b>Description:</b> <%= s.description%><br>
             <b>Price:</b> <%= s.price%><br>
-            <%= link_to "Buy", user_new_order_path_url(s), class: "btn btn-primary btn-md"%>
+            <% if Order.where(product_id: s.id).exists? %>
+              <div class="alert alert-secondary" role="alert">
+                Already order!
+              </div>
+            <% else %>
+              <%= form_for @order, url: pages_path do |f|%>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.hidden_field :product_id, value: s.id%>
+                <%= f.submit "Order", class: "btn btn-primary" %>
+              <% end %>
+            <% end %>
           </div>
         </div>
     </div>
